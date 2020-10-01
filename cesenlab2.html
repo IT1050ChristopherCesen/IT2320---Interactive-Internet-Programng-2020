@@ -3,130 +3,31 @@
 <head>
   <title>cesen Lab2</title>
   <script>
-var fibNum;
-    fibNum=prompt("Enter a number");
-    fibNum = parseInt(fibNum);
-    if (fibNum < 3) {
-        alert("Entry must be more than 3"); 
-    }
-     if (fibNum > 3) {
-      
-    var fibArray =[];
-    fibArray[0]=0;
-    fibArray[1]=1;
-    
-    for (var i = 2; i < fibNum; i++) {
-        fibArray[i] = i+ 1;
-    }
-    
-    var fibSqu = " ";
-    for (var i = 2; i < fibArray.length; i++) {
-        fibSqu += fibArray[i] + " ";
-    }
-    
-    var fibSum = (fibNum-1) + (fibNum-2); 
-    var goldenRatio = (fibNum-2) / (fibNum - 1);    
-    
-    alert(fibSqu);
-    
-    
-    alert(fibSum);
-    
-    alert(goldenRatio);
-    }
-
-
-/*
-   var fibArray =[];
-    fibArray[0]=0;
-    fibArray[1]=1;
-   var n1 = fibArray.lenght - 1;
-   var n2 = fibArray.lenght - 2;
-    
+    "use strict";
     var fibNum;
     fibNum=prompt("Enter a number");
     fibNum = parseInt(fibNum);
     if (fibNum < 3) {
-        alert("Entry must be more than 3"); 
-    }
-     if (fibNum > 3) {
-    
-    for (var i = 2; i < fibNum; i++) {
-        fibArray[i] = n1+ n2;
-    }
-     /*
-     //var goldenRatio = n2/n1;
-    var fibSum = "";
-    var n1 = fibNum - 1;
-    var n2 = fibNum - 2;
-    for (var i = 2; i > fibArray.length; ) {
-        fibSum +=  n1+ n2;
-    }
-    
-     }
-     
-    alert(fibSum);
-    
-    /*
-    var fibSqu = " ";
-    for (var i = 2; i < fibArray.length; i++) {
-        fibSqu += fibArray[i] + " ";
-    }
-    
-    var fibSum = (fibNum-1) + (fibNum-2); 
-        
-    
-    alert(fibSqu);
-    
-    
-    alert(fibSum);
-    
-   
-    
-    var fibSqu = " ";
-    for (var i = 2; i < fibArray.length; i++) {
-        fibSqu += fibArray[i] + " ";
-    }
-    
-    var fibSum = (fibNum-1) + (fibNum-2); 
-        
-    
-    alert(fibSqu);
-    
-    
-    alert(fibSum);
-    */
-  </script>
-      
-      <!--
-      /*"use strict";
-	  
-	  // set up an array and initialize the first two values
-	  var fibArray = [];
-	  fibArray[0] = 0;
-	  fibArray[1] = 1;
-	  
-	  // declare a variable for the size of the squence and prompt for it
-	  var fibNum;
+        alert("Entry must be more than 3");
+    } else {
+       var fibArray =[];
+       fibArray[0]=0;
+       fibArray[1]=1;
 
-	  // check that fibNum >= 3
-	  
-	  // write the values into the array
-	  // You start at 2 because the first two values are already there
-	  for (var i=2; i<fibNum; i++) {
-	     
-	  }
-	  
-	  // read from array and print to screen
-	  // another for loop 
-	  
-	  // calculate golden ratio and display it
-	  //  last number / 2nd last number
-   */
-   </script>
+       for (var i = 2; i < fibNum; i++) {
+         fibArray[i] = fibArray[i-1] + fibArray[i-2];
+       }
+       var ratio = fibArray[fibNum-1] / fibArray[fibNum-2];
+       for (var i = 0; i < fibArray.length; i++) {
+          document.write(fibArray[i]+"<br>");
+       }
+	   document.write(ratio);
+    }
+
+  </script>
+
    </pre>
 </head>
-  -->
 <body>
    <h2>Christopher Cesen - IT 2320 - Lab 2</h2>
 
