@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+   .blacktext { color: black; }
+   .redtext { color: red; }
+   .bluetext{ color: blue;}
+</style>
+  
+  <script>
+    "use strict;"
+    var $=function(id){
+    return document.getElementById(id);
+};
+    function processForm() {
+      var formGood=true;
+      var fname = document.getElementById("fname");value;
+       if (lname == "") {
+       formGood = false;
+        document.getElementById ('fnameLabel').className = 'redtext';
+   }
+   else {
+        document.getElementById ('fnameLabel').className = 'blacktext';
+   }
+    
+    }:
+   // function reset() {
+ // document.getElementById("fname").reset();
+
+
+window.onload = function() {
+		    $document.getElementById("reset").onclick = resetForm;
+        $document.getElementById ('submit').onclick = processForm;
+        $("fname").focus();
+};
+    
+  </script>
+<body>
+
+<form id="myForm" action="http://www.waynedog.net/formreader.php" method="post">
+  <table>
+    <tr>
+  <td><label id="fnameLabel" class="blacktext"></label>First name   </labe><input type="text" id="fname" name="fname"></td>
+    </tr>
+  </table>
+  <input type ="submit"  value="Submit">
+<input type="reset"   value="Reset"><br> 
+</<form id="myForm"<!-- action="http://www.waynedog.net/formreader.php" method="post"-->>
+
+
+</body>
+</html>
