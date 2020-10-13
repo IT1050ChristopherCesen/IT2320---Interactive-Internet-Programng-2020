@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>chriscesen Lab 4</title>
+      <style>
+      ul {
+
+      diplay: none;
+      }
+
+      </style>
+      <script>
+      "use strict";
+        var $ = function(id){return document.getElementById(id); };
+
+        window.onload=function() {
+            var listNode=$("imageList");
+            var captionNode=$("caption");
+            var imageNode =$("image");
+
+            var links = listNode.getElementsByTagName("a");
+            var i,linkNode,image;
+            var imageCache=[];
+            for (i=0; i<links.length; i++){
+                linkNode=links[i];
+
+                image = new Image();
+                image.src=linkNode.getAttribute("href");
+                image.title=linkNode.getAttribute("title");
+                imageCache[imageCache.length]=image;
+
+            }
+
+            var timer;
+            var counter=0;
+
+            var updateCounter = function() {
+                counter++;
+                $("counter").firstChild.nodeValue = counter;
+            };
+
+            window.onload=function() {
+                timer=setInterval (updateCountr, 1000);
+            };
+
+
+
+
+
+            var imageCounter=0;
+            var timer = setInterval (
+            function(){
+                imageCounter = (imageCounter + 1) % imageCache.length;
+                image = imageCache[imageCounter];
+                imageNode.src=image.src;
+                captionNode.firstChild.nodeValue=image.title;
+            },
+            5000)
+        };
+
+             /*
+          function(){
+              var secondsCount = document.getElementById(timerVal)
+               document.getElementById("demo").innerHTML =
+          }
+
+
+
+          };
+          */
+      </script>
+</head>
+
+<body>
+<main>
+    <h2> Christopher Cesen Lab</h2>
+    <h1>Slideshow test</h1>
+    <ul id="imageList">
+        <li><a href="images/blue.jpg" title="blue"></a></li>
+         <li><a href="images/red.jpg" title="red"></a></li>
+          <li><a href="images/green.jpg" title="green"></a></li>
+          <li><a href="images/cyan.jpg" title="cyan"></a></li>
+          <li><a href="images/orange.jpg" title="orange"></a></li>
+          <li><a href="images/yellow.jpg" title="yellow"></a></li>
+    </ul>
+    <p><img src="images/blue.jpg" alt="blue" id="image" /></p>
+    <h3>Counter: <span id="counter"></span></h3>
+    <h2>Please Work</h2>
+
+    <p><center>
+	   Timer (seconds): <input type="text" id="timerVal" value="5"><br/><br/>
+	  <!-- <img src="images/adams.jpg">--><br/><br/>
+	   <h2 id="timerCount">5</h2>
+	</center></p>
+    <!--  timerVal-->
+</main>
+
+     -->
+</body>
+</html>
